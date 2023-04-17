@@ -10,7 +10,13 @@ export const routes = [
         {
           path: 'd3',
           name: 'd3',
-          component: () => import('@/views/D3IntroView.vue')
+          component: () => import('@/views/D3IntroView.vue'),
+          children: [
+            { path: 'line-charts', name: 'LineCharts', component: ()=>  import('@/views/D3IntroView/LineCharts.vue') },
+            { path: 'line-chart-component', name: 'LineChartComponent', component: ()=>  import('@/views/D3IntroView/LineChartComponent.vue') },
+            { path: 'bar-charts', name: 'BarCharts', component: ()=>  import('@/views/D3IntroView/BarCharts.vue') },
+            { path: 'maps', name: 'Maps', component: ()=>  import('@/views/D3IntroView/Maps.vue') },
+          ]
         },
         {
           path: 'about',
